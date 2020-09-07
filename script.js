@@ -44,7 +44,6 @@ function passarPorcentagemCirculo(porcentagem) {
 }
 
 function iniciar() {
-    debugger;
     rodando = true;
     controleTempo.innerText = 'Pausar';
     temporizador = setInterval(atualizarTempo, 1000);
@@ -89,7 +88,7 @@ function atualizarTempo() {
         finalizarTurno();
     }
 
-    desenharTurno();
+    desenharTempo();
 }
 
 function finalizarTurno() {

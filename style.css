@@ -58,7 +58,7 @@ button:hover {
 }
 
 .circle-container {
-    transform: rotate(-90);
+    transform: rotate(-90deg);
 }
 
 .background-circulo, .circle {
