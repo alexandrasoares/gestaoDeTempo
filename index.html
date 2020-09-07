@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="turno"> </div>
+      <div class="container">
+        <svg width="200" height="200" class="circle-container">
+          <circle class="background-circulo"></circle>
+          <circle class="circle"></circle>
+        </svg>
+        <div class="tempo"> </div>
+      </div>
+
+      <div class="tipo-tempo"> </div>
+
+      <div>
+          <button class="controle-tempo"> Iniciar </button>
+          <button class="reinicio"> Reiniciar</button>
+      </div>
+    </div>
+
+    <audio id="notificacao">
+        <source src="notification.mp3">
+    </audio>
+    <script src="script.js"></script>
+  </body>
+</html>
