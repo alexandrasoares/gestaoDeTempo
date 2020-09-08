@@ -23,9 +23,9 @@ reinicio.addEventListener('click', reiniciar);
 function iniciarValores() {
     rodando = false;
     descanso = false;
-    tempoTrabalho = .1 * 60,
-    pausaTrabalho = .1 * 60,
-    pausaLongaTrabalho = .1 * 60,
+    tempoTrabalho = 25 * 60,
+    pausaTrabalho = 25 * 60,
+    pausaLongaTrabalho = 15 * 60,
     totalTurnos = 4,
     turnoAtual = 1,
     tempoTotal = tempoTrabalho;
