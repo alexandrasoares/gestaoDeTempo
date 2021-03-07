@@ -64,13 +64,17 @@ function desenharTempo() {
 }
 
 function desenharTurno() {
+    turnoElement.style.visibility = 'visible';
+
     let tipoTempo = 'Trabalho';
+
     if (descanso) {
         tipoTempo = turnoAtual < totalTurnos ? 'Descanso' : 'Descanso Longo';
+        turnoElement.style.visibility = 'hidden'; // Esconde o turno enquanto descanso for true.
     }
 
     tipoTempoElement.innerText = tipoTempo;
-    turnoElement.innerText = `${turnoAtual} / ${totalTurnos}`
+    turnoElement.innerText = `${turnoAtual} / ${totalTurnos}`     
 }
 
 function reiniciar() {
@@ -99,6 +103,7 @@ function finalizarTurno() {
 
 function mudarProximoTurno(){
     descanso = !descanso;
+
     if (!descanso) {
         turnoAtual++;
     }
