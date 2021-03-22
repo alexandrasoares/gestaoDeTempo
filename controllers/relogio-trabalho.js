@@ -23,8 +23,8 @@ reinicio.addEventListener('click', reiniciar);
 function iniciarValores() {
     rodando = false;
     descanso = false;
-    tempoTrabalho = 25 * 60,
-    pausaTrabalho = 25 * 60,
+    tempoTrabalho = 1 * 5, // 24 * 60
+    pausaTrabalho = 1 * 5, // 5 * 60
     pausaLongaTrabalho = 15 * 60,
     totalTurnos = 4,
     turnoAtual = 1,
@@ -64,14 +64,17 @@ function desenharTempo() {
 }
 
 function desenharTurno() {
+    turnoElement.style.visibility = 'visible';
+
     let tipoTempo = 'Trabalho';
+
     if (descanso) {
         tipoTempo = turnoAtual < totalTurnos ? 'Descanso' : 'Descanso Longo';
+        turnoElement.style.visibility = 'hidden'; // Esconde o turno enquanto descanso for true.
     }
 
     tipoTempoElement.innerText = tipoTempo;
-    turnoElement.innerText = `${turnoAtual} / ${totalTurnos}`
-
+    turnoElement.innerText = `${turnoAtual} / ${totalTurnos}`     
 }
 
 function reiniciar() {
@@ -100,6 +103,7 @@ function finalizarTurno() {
 
 function mudarProximoTurno(){
     descanso = !descanso;
+
     if (!descanso) {
         turnoAtual++;
     }
@@ -122,3 +126,5 @@ function mudarProximoTurno(){
 }
 
 reiniciar();
+
+export default RelogioTrabalho;
