@@ -1,3 +1,5 @@
+const bodyElement = document.querySelector('body');
+const descansoElement = document.querySelector('h1');
 const circuloElement = document.querySelector('.circle');
 const tempoElement = document.querySelector('.tempo');
 const turnoElement = document.querySelector('.turno');
@@ -65,12 +67,15 @@ function desenharTempo() {
 
 function desenharTurno() {
     turnoElement.style.visibility = 'visible';
+    descansoElement.style.visibility = 'hidden';
 
     let tipoTempo = 'Trabalho';
 
     if (descanso) {
         tipoTempo = turnoAtual < totalTurnos ? 'Descanso' : 'Descanso Longo';
         turnoElement.style.visibility = 'hidden'; // Esconde o turno enquanto descanso for true.
+        descansoElement.style.visibility = 'visible';
+        bodyElement.style.background = '#fff9f9';
     }
 
     tipoTempoElement.innerText = tipoTempo;
